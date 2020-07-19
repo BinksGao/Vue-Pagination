@@ -21,7 +21,6 @@ Mock.mock('http://localhost:8080/list', 'post', (params) => {
     const len = total / size
     const totalPages = len - parseInt(len) > 0 ? parseInt(len) : len
     const curPageList = pageList.slice((index - 1) * size, (index) * size)
-    console.table(curPageList)
     return {
         'code': '0',
         'message': 'success',

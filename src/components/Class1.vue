@@ -66,7 +66,6 @@ export default {
           if ((res.status = 200)) {
             this.total = res.data.data.total;
             this.lists = res.data.data.student;
-            console.log(this.lists)
           }
         });
     },

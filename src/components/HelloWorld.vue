@@ -3,7 +3,10 @@
     
     <router-link to="class1">班级1</router-link>
     <router-link to="class2">班级2</router-link>
-    <router-view/>
+    <router-view v-if="!$route.meta.keepAlive"></router-view>
+    <keep-alive>
+      <router-view v-if="$route.meta.keepAlive"></router-view>
+    </keep-alive>
   </div>
 </template>
 
@@ -12,6 +15,8 @@
 
 export default {
   name: "HelloWorld",
+  mounted() {
+  },
 };
 </script>
 

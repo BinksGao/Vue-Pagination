@@ -12,17 +12,20 @@ export default new Router({
     {
       path: '/',
       name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/class1',
-      name: 'Class1',
-      component: Class1
-    },
-    {
-      path: '/class2',
-      name: 'Class3',
-      component: Class2
+      component: HelloWorld,
+      children: [
+        {
+          path: '/class1',
+          name: 'Class1',
+          component: Class1
+        },
+        {
+          path: '/class2',
+          name: 'Class3',
+          component: Class2,
+          meta: { keepAlive: true },
+        }
+      ]
     }
   ]
 })
